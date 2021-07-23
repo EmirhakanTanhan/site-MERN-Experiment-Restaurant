@@ -15,7 +15,7 @@ export default class RestaurantsDAO {
     static async getRestaurants({
         filters = null,
         page = 0,
-        restaurantPerPage = 20,
+        restaurantsPerPage = 20,
     } = {}) {
         let query;
         if (filters) {
@@ -38,7 +38,7 @@ export default class RestaurantsDAO {
             return { restaurantsList: [], totalNumRestaurants: 0 };
         }
 
-        const displayCursor = cursor.limit(restaurantPerPage).skip(restaurantPerPage * page);
+        const displayCursor = cursor.limit(restaurantsPerPage).skip(restaurantsPerPage * page);
 
         try {
             const restaurantsList = await displayCursor.toArray();
