@@ -10,7 +10,7 @@ export default class ReviewsController {
                 _id: req.body.user_id,
             };
         } catch (e) {
-
+            console.error(`Unable to issue reviews: ${e}`);
         }
     }
 }
