@@ -1,3 +1,6 @@
+import mongodb from "mongodb";
+const ObjectId = mongodb.ObjectId;
+
 let restaurants;
 
 export default class RestaurantsDAO {
@@ -50,4 +53,18 @@ export default class RestaurantsDAO {
             return { restaurantsList: [], totalNumRestaurants: 0 };
         }
     }
+
+    /*static async getRestaurantById(id) {
+        try {
+            const pipeline = [
+                {
+                    $match: {
+                        _id: new ObjectId(id),
+                    },
+                },
+            ]
+        } catch (e) {
+
+        }
+    }*/
 }
