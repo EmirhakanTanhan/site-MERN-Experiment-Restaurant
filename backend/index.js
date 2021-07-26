@@ -18,7 +18,7 @@ MongoClient.connect(
     })
     .catch(err => {
         console.log(err.stack);
-        /*process.exit(1);*/
+        process.exit(1);
     })
     .then(async client => {
         await RestaurantsDAO.injectDB(client);
