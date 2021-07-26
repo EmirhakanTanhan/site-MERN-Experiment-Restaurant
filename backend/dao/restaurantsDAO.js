@@ -59,36 +59,31 @@ export default class RestaurantsDAO {
     static async getRestaurantById(id) {
         try {
             const pipeline = [
+                {$match: {_id: new ObjectId(id)}},
                 {
-                    $match: {
-                        _id: new ObjectId(id),
-                    },
-                },
-                {
-                    $lookup: {
-                        from: "reviews",
-                        let: {
-                            id: "$_id",
-                        },
-                        pipeline: [
-                            {
-                                $match: {
-                                    $expr: {
-                                        $eq: ["$restaurant_id", "$$id"],
+                    $lookup:
+                        {
+                            from: "reviews",
+                            let: { id: "$_id" },
+                            pipeline: [
+                                {
+                                    $match: {
+                                        $expr: {
+                                            $eq: ["$restaurant_id", "$$id"],
+                                        },
                                     },
                                 },
-                            },
-                            {
-                                $sort: {
-                                    date: -1,
+                                {
+                                    $sort: {
+                                        date: -1,
+                                    },
                                 },
-                            },
-                        ],
-                        as: "reviews",
-                    },
+                            ],
+                            as: "reviews",
+                        },
                 },
                 {
-                    $addFields: {
+                    $set: {
                         reviews: "$reviews",
                     },
                 },
