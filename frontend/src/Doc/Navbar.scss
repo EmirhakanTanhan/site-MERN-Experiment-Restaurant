@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  background-color: #3d3d43;
+
+  * {
+    text-decoration: none;
+  }
+
+  .brand {
+    h2 {
+      margin: 1.5rem;
+      color: azure;
+    }
+  }
+
+  .links {
+    align-self: center;
+
+    a {
+      color: #cbcbcb;
+      padding: .5rem;
+
+      &:hover {
+        color: azure;
+      }
+    }
+  }
+
+}
