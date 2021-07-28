@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  background-color: #3d3d43;
+}
+.navbar * {
+  text-decoration: none;
+}
+.navbar .brand h2 {
+  margin: 1.5rem;
+  color: azure;
+}
+.navbar .links {
+  align-self: center;
+}
+.navbar .links a {
+  color: #cbcbcb;
+  padding: 0.5rem;
+}
+.navbar .links a:hover {
+  color: azure;
+}
+
+/*# sourceMappingURL=Navbar.css.map */
