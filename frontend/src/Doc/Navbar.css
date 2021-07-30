@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
-  background-color: #3d3d43;
+  background: #e76f51;
+  background: linear-gradient(90deg, #e76f51 0%, #f4a261 100%);
 }
 .navbar * {
   text-decoration: none;
@@ -13,10 +14,13 @@
   align-self: center;
 }
 .navbar .links a {
-  color: #cbcbcb;
+  color: #ffdfd7;
   padding: 0.5rem;
 }
 .navbar .links a:hover {
+  color: azure;
+}
+.navbar .links .nav-active {
   color: azure;
 }
 

@@ -1,0 +1,46 @@
+.card {
+  margin: 1rem;
+
+  --cardWidht: 17rem;
+  max-width: var(--cardWidht);
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: 2rem 5rem 2rem;
+  border: .1rem #dddddd solid;
+  border-radius: 10px;
+
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .details {
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  .buttons {
+    display: inline-flex;
+    min-width: var(--cardWidht);
+    justify-content: space-between;
+
+    a {
+      min-width: calc(var(--cardWidht) / 2.1);
+
+      background-color: #ffffff;
+      border: .1rem #2A9D8F solid;
+      border-radius: .3rem;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: .4rem;
+
+      &:hover {
+        color: #ffffff;
+        background-color: #2A9D8F;
+
+      }
+    }
+  }
+}
