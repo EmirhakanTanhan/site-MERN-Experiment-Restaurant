@@ -5,7 +5,7 @@
   max-width: var(--cardWidht);
   padding: 1rem;
   display: grid;
-  grid-template-rows: 2rem 5rem 2rem;
+  grid-template-rows: 3.5rem 4rem 2rem;
   border: .1rem #dddddd solid;
   border-radius: 10px;
 
@@ -19,6 +19,22 @@
     strong {
       font-weight: 500;
     }
+
+    .address {
+      height: 1.5rem;
+      width: var(--cardWidht);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .cuisine {
+      height: 1.5rem;
+      width: var(--cardWidht);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   .buttons {
@@ -27,18 +43,23 @@
     justify-content: space-between;
 
     a {
-      min-width: calc(var(--cardWidht) / 2.1);
+      min-width: calc((var(--cardWidht) - 2rem) / 2.1);
 
+      text-decoration: none;
+      align-self: center;
+      text-align: center;
+      color: black;
       background-color: #ffffff;
-      border: .1rem #2A9D8F solid;
+      border: .1rem #2a9d8f solid;
       border-radius: .3rem;
       cursor: pointer;
       font-size: 1rem;
-      padding: .4rem;
+      padding: .3rem .2rem;
+      transition: .3s;
 
       &:hover {
         color: #ffffff;
-        background-color: #2A9D8F;
+        background-color: #2a9d8f;
 
       }
     }

@@ -1,14 +1,16 @@
 import {useState, useEffect} from "react";
+import "./RestaurantsList.css"
 import RestaurantDataService from "../Services/Restaurant";
-import {Link} from "react-router-dom";
 import Card from "./BasicComponents/Card";
+import SearchBar from "./BasicComponents/SearchBar";
+import DropdownSearchBar from "./BasicComponents/DropdownSearchBar";
 
 const RestaurantsList = props => {
     const [restaurants, setRestaurants] = useState([]);
     const [searchName, setSearchName] = useState("");
     const [searchZip, setSearchZip] = useState("");
     const [searchCuisine, setSearchCuisine] = useState("");
-    const [cuisines, setCuisines] = useState("All Cuisines");
+    const [cuisines, setCuisines] = useState(["All Cuisines"]);
 
     useEffect(() => {
         retrieveRestaurants();
@@ -20,14 +22,14 @@ const RestaurantsList = props => {
         setSearchName(searchName);
     };
 
-    const onChangeZipName = e => {
+    const onChangeSearchZip = e => {
         const searchZip = e.target.value;
-        setSearchName(searchZip);
+        setSearchZip(searchZip);
     };
 
-    const onChangeCuisineName = e => {
+    const onChangeSearchCuisine = e => {
         const searchCuisine = e.target.value;
-        setSearchName(searchCuisine);
+        setSearchCuisine(searchCuisine);
     };
 
     const retrieveRestaurants = () => {
@@ -84,10 +86,20 @@ const RestaurantsList = props => {
     };
 
 
-
     return (
-        <div>
-            <Card />
+        <div className="restaurants-list">
+            <div className="search-area">
+                <SearchBar placeHolder={"Search by name"} inputValue={searchName} onChange={onChangeSearchName} onClick={findByName}/>
+                <SearchBar placeHolder={"Search by zip"} inputValue={searchZip} onChange={onChangeSearchZip} onClick={findByZip}/>
+                <DropdownSearchBar optionValue={cuisines} onChange={onChangeSearchCuisine} onClick={findByCuisine}/>
+            </div>
+            <div className="card-area">
+                <div className="cards">
+                    {restaurants.map((restaurant) => (
+                        <Card data={restaurant}/>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }

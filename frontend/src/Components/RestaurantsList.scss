@@ -1,0 +1,16 @@
+.restaurants-list {
+
+  .search-area {
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .card-area {
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: .7rem;
+    }
+  }
+}

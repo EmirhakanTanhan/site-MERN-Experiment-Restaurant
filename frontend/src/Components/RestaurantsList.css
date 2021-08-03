@@ -1,3 +1,11 @@
-
+.restaurants-list .search-area {
+  margin: 2rem 0;
+  text-align: center;
+}
+.restaurants-list .card-area .cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0.7rem;
+}
 
 /*# sourceMappingURL=RestaurantsList.css.map */

@@ -11,7 +11,9 @@ function App() {
         <Router>
             <div className="App">
                 <Navbar/>
-                <RestaurantsList/>
+                <div className="wrapper">
+                    <RestaurantsList/>
+                </div>
             </div>
         </Router>
 

@@ -4,7 +4,7 @@
   max-width: var(--cardWidht);
   padding: 1rem;
   display: grid;
-  grid-template-rows: 2rem 5rem 2rem;
+  grid-template-rows: 3.5rem 4rem 2rem;
   border: 0.1rem #dddddd solid;
   border-radius: 10px;
 }
@@ -15,23 +15,42 @@
 .card .details strong {
   font-weight: 500;
 }
+.card .details .address {
+  height: 1.5rem;
+  width: var(--cardWidht);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card .details .cuisine {
+  height: 1.5rem;
+  width: var(--cardWidht);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .card .buttons {
   display: inline-flex;
   min-width: var(--cardWidht);
   justify-content: space-between;
 }
 .card .buttons a {
-  min-width: calc(var(--cardWidht) / 2.1);
+  min-width: calc((var(--cardWidht) - 2rem) / 2.1);
+  text-decoration: none;
+  align-self: center;
+  text-align: center;
+  color: black;
   background-color: #ffffff;
-  border: 0.1rem #2A9D8F solid;
+  border: 0.1rem #2a9d8f solid;
   border-radius: 0.3rem;
   cursor: pointer;
   font-size: 1rem;
-  padding: 0.4rem;
+  padding: 0.3rem 0.2rem;
+  transition: 0.3s;
 }
 .card .buttons a:hover {
   color: #ffffff;
-  background-color: #2A9D8F;
+  background-color: #2a9d8f;
 }
 
 /*# sourceMappingURL=Card.css.map */

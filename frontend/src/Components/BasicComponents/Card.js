@@ -2,20 +2,20 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import "./Card.css";
 
-const Card = (prop) => {
-    /*const address = `${prop.address.building} ${prop.address.street}, ${prop.address.zipcode}`;*/
+const Card = ({data}) => {
+    const address = `${data.address.building} ${data.address.street}, ${data.address.zipcode}`;
     return (
         <div className="card">
             <div className="title">
-                {prop.name}
+                {data.name}
             </div>
             <div className="details">
-                <div className="cuisine"><strong>Cuisine: </strong> {prop.cuisine}</div>
-                <div className="address"><strong>Address: </strong>{prop.address}</div>
+                <div className="cuisine" title={data.cuisine}><strong>Cuisine: </strong> {data.cuisine}</div>
+                <div className="address" title={address}><strong>Address: </strong>{address}</div>
             </div>
             <div className="buttons">
-                    <Link to={"/restaurants/"+prop._id}>View Reviews</Link>
-                    <a target="_blank" href={"https://www.google.com/maps/place/" + prop.address}>View Map</a>
+                    <Link to={"/restaurants/"+data._id}>View Reviews</Link>
+                    <a target="_blank" href={"https://www.google.com/maps/place/" + address}>View Map</a>
             </div>
         </div>
     );

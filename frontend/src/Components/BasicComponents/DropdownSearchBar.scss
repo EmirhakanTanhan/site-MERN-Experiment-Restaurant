@@ -1,0 +1,48 @@
+.dropdown-search-bar {
+  display: inline-flex;
+
+  margin: .4rem 1rem;
+
+  .input-form {
+    width: 12rem;
+    height: 2.2rem;
+    border: .1rem #dddddd solid;
+    border-right: none;
+    border-bottom-left-radius: .5rem;
+    border-top-left-radius: .5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+
+    &:focus-visible {
+      outline: none;
+      border: .1rem #a9a9a9 solid;
+      border-right: none;
+    }
+  }
+
+  .input-button {
+
+    .green-button-outline {
+      width: 5rem;
+      height: 2.2rem;
+      background-color: #ffffff;
+      border: .1rem #a9a9a9 solid;
+      border-bottom-right-radius: .5rem;
+      border-top-right-radius: .5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: .3s;
+
+      &:hover {
+        color: #ffffff;
+        background-color: #2a9d8f;
+        border-color: #2a9d8f;
+      }
+      &:active {
+        color: #ffffff;
+        background-color: #264653;
+        border-color: #264653;
+      }
+    }
+  }
+}
