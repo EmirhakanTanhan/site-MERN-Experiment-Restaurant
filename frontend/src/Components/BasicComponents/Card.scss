@@ -1,28 +1,37 @@
 .card {
-  margin: 1rem;
+  --cardWidht: 19rem;
 
-  --cardWidht: 17rem;
+  margin: 1rem;
   max-width: var(--cardWidht);
-  padding: 1rem;
+  padding-bottom: 1rem;
   display: grid;
-  grid-template-rows: 3.5rem 4rem 2rem;
+  grid-template-rows: 4.5rem 4rem 2rem;
   border: .1rem #dddddd solid;
-  border-radius: 10px;
+  border-radius: .7rem;
 
 
   .title {
+    max-width: inherit;
+    padding: 1rem 1rem 0 1rem;
     font-size: 1.2rem;
     font-weight: 500;
+    border-top-left-radius: .6rem;
+    border-top-right-radius: .6rem;
+    border-bottom: .1rem #dddddd solid;
+    color: #000000;
   }
 
   .details {
+    width: calc(var(--cardWidht) - 2rem);
+    padding: .3rem 1rem;
+
     strong {
       font-weight: 500;
     }
 
     .address {
       height: 1.5rem;
-      width: var(--cardWidht);
+      width: inherit;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -30,7 +39,7 @@
 
     .cuisine {
       height: 1.5rem;
-      width: var(--cardWidht);
+      width: inherit;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -39,11 +48,13 @@
 
   .buttons {
     display: inline-flex;
-    min-width: var(--cardWidht);
+    width: calc(var(--cardWidht) - 2rem);;
     justify-content: space-between;
 
+    padding: 0 1rem;
+
     a {
-      min-width: calc((var(--cardWidht) - 2rem) / 2.1);
+      min-width: calc((var(--cardWidht) - 2rem) / 2 - 1rem);
 
       text-decoration: none;
       align-self: center;
